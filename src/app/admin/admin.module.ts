@@ -19,6 +19,7 @@ import { EmployeeProcessReportComponent } from './submenus/reports/employee-proc
 import { MiscDetailsComponent } from './submenus/eim/misc-details/misc-details.component';
 import { NomineeDetailsComponent } from './submenus/eim/nominee-details/nominee-details.component';
 import { FamEduExpComponent } from './submenus/eim/fam-edu-exp/fam-edu-exp.component';
+import { PersonalDetailsComponent } from './submenus/eim/personal-details/personal-details.component';
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import { FamEduExpComponent } from './submenus/eim/fam-edu-exp/fam-edu-exp.compo
     MiscDetailsComponent,
     NomineeDetailsComponent,
     FamEduExpComponent,
+    PersonalDetailsComponent
   ]
 })
 export class AdminModule { }

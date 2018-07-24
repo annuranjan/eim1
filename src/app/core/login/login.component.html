@@ -9,7 +9,9 @@
         <label for="password">Password</label>
         <input type="text" class="form-control" id="password" formControlName="password">
       </div>
-      <button class="submitButton" [disabled]="loginForm.invalid">Login</button>
+
+      <span *ngIf="loginUnauthorized" [ngStyle]="{'color':'red'}">Either username or password is incorrect.</span>
+      <button class="submitButton" [disabled]="loginForm.invalid || loginUnauthorized">Login</button>
     </form>
   </div>
 </div>

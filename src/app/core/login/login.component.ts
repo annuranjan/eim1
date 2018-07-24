@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit/*, OnDestroy */ {
+  // ErrorSub: Subscription;
   loginForm: FormGroup;
-
   constructor(private authServ: AuthService) { }
 
   ngOnInit() {
@@ -24,4 +25,7 @@ export class LoginComponent implements OnInit {
     this.authServ.login(this.loginForm.get('username').value, this.loginForm.get('password').value);
   }
 
+  // ngOnDestroy() {
+  // this.ErrorSub.unsubscribe();
+  // }
 }

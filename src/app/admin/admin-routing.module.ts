@@ -13,6 +13,7 @@ import { NotFoundComponent } from "../core/not-found/not-found.component";
 import { NomineeDetailsComponent } from "./submenus/eim/nominee-details/nominee-details.component";
 import { FamEduExpComponent } from "./submenus/eim/fam-edu-exp/fam-edu-exp.component";
 import { CreateReportComponent } from "../core/shared-module/create-report/create-report.component";
+import { PersonalDetailsComponent } from "./submenus/eim/personal-details/personal-details.component";
 
 const adminRoutes: Routes = [
     {
@@ -23,7 +24,7 @@ const adminRoutes: Routes = [
                     { path: "addEmployee", component: AddEmployeeComponent },
                     { path: "viewEmployees", component: ViewEmployeesComponent },
                     { path: "editEmployee", component: AddEmployeeComponent },
-                    { path: "domainName", component: MiscDetailsComponent },
+                    { path: "personalDetails", component: PersonalDetailsComponent },
                     { path: "languages", component: MiscDetailsComponent },
                     { path: "trainingDetails", component: MiscDetailsComponent },
                     { path: "salaryDetails", component: MiscDetailsComponent },

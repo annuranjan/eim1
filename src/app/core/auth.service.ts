@@ -1,13 +1,20 @@
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { ErrorHandlerService } from './errorHandler.service';
+import { throwError } from '../../../node_modules/rxjs';
 
 @Injectable()
 export class AuthService {
     token;
     private userType;
 
-    constructor(private http: HttpClient, private router: Router) { }
+    constructor(
+        private http: HttpClient,
+        private router: Router,
+        private errorHandler: ErrorHandlerService
+    ) { }
 
     getUserType() {
         return this.userType;
@@ -43,7 +50,6 @@ export class AuthService {
         this.token = "";
         this.userType = "";
         this.router.navigate(['/login']);
-        console.log("Logged out");
     }
 
     addEmployee(employee: any) {

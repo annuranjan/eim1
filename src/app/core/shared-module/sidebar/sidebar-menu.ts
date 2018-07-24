@@ -1,6 +1,6 @@
 export class SidebarMenus {
 
-    //Note: All the Sidebar Menus should be in lower case. Like "eim" and "reports" and not "EIM" and "Reports" 
+    //Note: All the title for a userType has to be unique as adminRoutes, managerRoutes etc use title as key.  
     //Admin Submenus
 
     admin = {
@@ -11,7 +11,7 @@ export class SidebarMenus {
             },
             {
                 title: "Add more details",
-                subMenu: ["Domain Name",
+                subMenu: ["Personal Details",
                     "Languages", "Family Details", "Education Details", "Experience Details", "Training Details", "Nominee Details", "Salary Details"]
             },
             {
@@ -60,7 +60,7 @@ export class SidebarMenus {
             "Edit Employee": "editEmployee",
         },
         "Add more details": {
-            "Domain Name": "domainName",
+            "Personal Details": "personalDetails",
             "Languages": "languages",
             "Training Details": "trainingDetails",
             "Salary Details": "salaryDetails",

@@ -15,6 +15,8 @@ import { AdminModule } from '../admin/admin.module';
 import { SharedModule } from './shared-module/shared.module';
 import { EmployeeModule } from '../employee/employee.module';
 import { ManagerModule } from '../manager/manager.module';
+import { ErrorHandlerService } from './errorHandler.service';
+import { AuthLogService } from './authLog.service';
 
 @NgModule({
   imports: [
@@ -36,6 +38,6 @@ import { ManagerModule } from '../manager/manager.module';
     NotFoundComponent
   ],
   exports: [],
-  providers: [AuthService, AppService]
+  providers: [AuthService, AppService, ErrorHandlerService, AuthLogService]
 })
 export class CoreModule { }
