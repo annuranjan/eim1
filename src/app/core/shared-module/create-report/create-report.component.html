@@ -1,0 +1,39 @@
+<br>
+<h3 class="bottomMargin2">Create a Report</h3>
+
+<div class="col-sm-9">
+  <hr>
+</div>
+
+<form [formGroup]="reportForm" (ngSubmit)="onFormSubmit()">
+  <!-- <div class="form-group"> -->
+  <div class="form-group">
+    <div class="col-sm-9">
+
+      <div class="row bottomMargin2">
+        <div class="col-sm-2">
+          <label for="reportTitle">Report Title: </label>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" name="reportTitle" class="form-control" formControlName="reportTitle">
+        </div>
+        <div class="col-sm-3">
+          <p-dropdown [options]="reportType" formControlName="reportType"></p-dropdown>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-9">
+      <div class="row">
+        <textarea rows="8" class="form-control col-sm-12" formControlName="reportBody"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9 bottomMargin2">
+    <hr>
+  </div>
+
+  <div class="row" *ngIf="reportForm.invalid && reportForm.touched" [ngStyle]="{'color':'red'}">Please fill all the fields of the report!</div>
+  <button [disabled]="reportForm.invalid" class="submitButton">Submit</button>
+
+</form>

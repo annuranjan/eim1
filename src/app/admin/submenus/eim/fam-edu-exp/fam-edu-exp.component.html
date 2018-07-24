@@ -1,0 +1,125 @@
+<div class="bottomMargin2">&nbsp;</div>
+<form [formGroup]="famEduExp" (ngSubmit)="onFormSubmit()">
+
+  <div class="row">
+    <button class="defaultButton bottomMargin1" type="button" (click)="addAFamilyMember()">Add a family member</button>
+    <div formArrayName="famArray">
+      <table class="table">
+        <thead>
+          <tr>
+            <td scope="col">#</td>
+            <td scope="col">Name</td>
+            <td scope="col">Relation</td>
+            <td scope="col">Age</td>
+            <td scope="col"></td>
+          </tr>
+        </thead>
+        <tbody *ngFor="let formGroup of famEduExp.get('famArray').controls; let i = index">
+          <tr [formGroupName]="i">
+            <td>{{i+1}}</td>
+            <td>
+              <input type="text" formControlName="name" class="form-control ">
+            </td>
+            <td>
+              <input type="text" formControlName="relation" class="form-control">
+            </td>
+            <td>
+              <input type="number" formControlName="age" class="form-control">
+            </td>
+            <td>
+              <button type="button" class="deleteButton" (click)="deleteAFamilyMember()">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span *ngIf="famEduExp.get('expArray').invalid && famEduExp.get('expArray').touched" [ngStyle]="{'color':'red'}">Please fill all the family details!</span>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <button class="defaultButton bottomMargin1" type="button" (click)="addAnEdu()">Add an Educational Qualification</button>
+    <div formArrayName="eduArray">
+      <table class="table">
+        <thead>
+          <tr>
+            <td scope="col">#</td>
+            <td scope="col">Exam Name</td>
+            <td scope="col">School Name</td>
+            <td scope="col">Passing Year</td>
+            <td scope="col">Passing Grade</td>
+            <td scope="col"></td>
+          </tr>
+        </thead>
+        <tbody *ngFor="let formGroup of famEduExp.get('eduArray').controls; let i = index">
+          <tr [formGroupName]="i">
+            <td>{{i+1}}</td>
+            <td>
+              <input type="text" formControlName="examName" class="form-control">
+            </td>
+            <td>
+              <input type="text" formControlName="schoolName" class="form-control">
+            </td>
+            <td>
+              <!-- <input type="number" formControlName="passingYear" class="form-control"> -->
+              <p-dropdown [options]="passingYear" formControlName="passingYear"></p-dropdown>
+            </td>
+            <td>
+              <input type="text" formControlName="passingGrade" class="form-control">
+            </td>
+            <td>
+              <button type="button" class="deleteButton" (click)="deleteAnEdu()">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span *ngIf="famEduExp.get('eduArray').invalid && famEduExp.get('eduArray').touched" [ngStyle]="{'color':'red'}">Please fill all the education details!</span>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <button class="defaultButton bottomMargin1" type="button" (click)="addAnExp()">Add an experience</button>
+    <div formArrayName="expArray">
+      <table class="table">
+        <thead>
+          <tr>
+            <td scope="col">#</td>
+            <td scope="col">Company Name</td>
+            <td scope="col">Designation</td>
+            <td scope="col">Joining Date</td>
+            <td scope="col">Leaving Date</td>
+            <td scope="col"></td>
+          </tr>
+        </thead>
+        <tbody *ngFor="let formGroup of famEduExp.get('expArray').controls; let i = index">
+          <tr [formGroupName]="i">
+            <td>{{i+1}}</td>
+            <td>
+              <input type="text" formControlName="companyName" class="form-control ">
+            </td>
+            <td>
+              <input type="text" formControlName="designation" class="form-control">
+            </td>
+            <td>
+              <p-calendar formControlName="joiningDate"></p-calendar>
+            </td>
+            <td>
+              <p-calendar formControlName="leavingDate"></p-calendar>
+            </td>
+            <td>
+              <button type="button" class="deleteButton" (click)="deleteAnExp()">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <span *ngIf="famEduExp.get('expArray').invalid && famEduExp.get('expArray').touched" [ngStyle]="{'color':'red'}">Please fill all the experience details!</span>
+
+  <hr>
+
+  <button type="submit" class="submitButton">Submit</button>
+</form>

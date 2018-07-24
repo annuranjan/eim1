@@ -1,0 +1,36 @@
+hr {
+  /* display: block;
+    position: relative; */
+  align-content: center;
+  /* padding-bottom: 1;
+    margin: 8px auto;
+    height: 0;
+    width: 90%;
+    max-height: 0;
+    font-size: 1px;
+    line-height: 0;
+    clear: both;
+    border: none;
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #ffffff;
+    box-shadow: #aaaaaa; */
+  border-color: #dbeaff;
+  margin-bottom: 2.5%;
+  margin-top: 2.5%;
+}
+
+.btn[disabled]:hover {
+  /* background:#bedd16; */
+  background: #aac4ed;
+}
+
+.btn[disabled]:active:focus {
+  /* color: #000000; */
+  color: #579df9;
+}
+
+.btn[disabled]:focus {
+  /* background:#bedd16; */
+  background: #aac4ed;
+  color: #666666;
+}

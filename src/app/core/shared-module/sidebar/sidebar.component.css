@@ -1,0 +1,29 @@
+* {
+  border-radius: 0 !important;
+}
+
+.submenuTitle {
+  color: white;
+  /* background-color: #5e5e5e */
+  background-color: #343A40
+}
+
+/* .submenuListItem { */
+
+/* background-color: #f8f9fa; */
+
+/* background-color: #5e5e5e; */
+
+/* background-color: #dbdbdb; */
+
+/* color: white */
+
+/* } */
+
+.navbarColor {
+  /* background-color: #f8f9fa; */
+}
+
+.listItemContainer {
+  background-color: #DDDDDD;
+}

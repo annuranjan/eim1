@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+.deleteButton {
+  background-color: #d64242;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  line-height: 50%;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  /* font-size: 16px;
+    margin: 4px 2px; */
+  cursor: pointer;
+}
+
+.submitButton {
+  background-color: #579df9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  line-height: 50%;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  /* font-size: 16px;
+      margin: 4px 2px; */
+  cursor: pointer;
+}
+
+.defaultButton {
+  background-color: #DDDDDD;
+  border: none;
+  padding: 15px 32px;
+  line-height: 50%;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  /* font-size: 16px;
+        margin: 4px 2px; */
+  cursor: pointer;
+}
+
+.bottomMargin2 {
+  margin-bottom: 2%;
+}
+
+.bottomMargin1 {
+  margin-bottom: 1%;
+}
+
+/* * {
+  border-radius: 0 !important;
+} */

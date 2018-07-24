@@ -1,0 +1,44 @@
+<!-- <nav class="navbar navbar-expand-sm navbar-light bg-light"> -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+  <!-- <a href="#" class="navbar-brand">
+    <img src="https://logosassociated.com/wp-content/uploads/2015/01/559-Free-Vector-logo-design-300x190.jpg" style=" max-width:150px; max-width: 90px"
+      alt="">
+  </a> -->
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Navbar</span>
+  </nav>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+
+
+    <!--start dyanamic filling of navbar here-->
+
+
+
+    <ul class="navbar-nav">
+
+      <li class="nav-item active">
+        <a (click)="onHomeClick()" class="nav-link">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngFor="let menuItem of navbarMenu">
+      <li class="nav-item">
+        <!-- <a routerLink="{{menuItem.toLowerCase()}}" class="nav-link">{{menuItem}}</a> -->
+        <a (click)="onNavClick(menuItem)" class="nav-link">{{menuItem}}</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a (click)="onLogout()" class="nav-link">Logout</a>
+      </li>
+    </ul>
+
+
+  </div>
+</nav>

@@ -1,0 +1,7 @@
+<app-header></app-header>
+<div *ngIf="dispSidebar">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="!dispSidebar">
+  Welcome {{userType}}
+</div>

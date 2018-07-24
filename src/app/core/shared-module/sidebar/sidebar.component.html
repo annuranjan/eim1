@@ -1,0 +1,10 @@
+<nav>
+  <ul class="list-group" *ngFor="let submenuItem of submenu">
+    <li class="list-group-item submenuTitle">{{submenuItem.title}}</li>
+    <li class="list-group-item listItemContainer">
+      <ul class="sub-menu list-group" *ngFor="let subsubmenuItem of submenuItem.subMenu">
+        <li class="list-group-item submenuListItem" (click)="onSubMenuItemClick(subsubmenuItem,submenuItem.title)">{{subsubmenuItem}}</li>
+      </ul>
+    </li>
+  </ul>
+</nav>

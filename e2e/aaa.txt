@@ -1,0 +1,78 @@
+Admin
+1. Home
+2. Admin
+3. EIM => {Add Employee, Edit Employee, View Employee List}
+4. Reports:(utilities)
+5. Leave
+6. Track Employee: (utilities)
+
+**********************************
+Manager
+1. Home
+2. Admin
+2. EIM =>{View Employee List, Access Own Profile}
+3. Time Registration
+4. ContactBook
+5. Reports (utility)
+
+*********************************
+
+Employee
+1. Home
+2. Time Registration
+3. Leave
+
+Eim => {initial insertion, Access Own Profile}
+
+//Bugs:
+1. On the welcome screen, the side menu is not immediately displayed when navbar is clicked. It takes two clicks the first time. 
+2. Encryption of password sent to server. 
+3. Cannot fix the pattern of the "Passing Grade" in miscComponent
+
+//Reviews Wanted on topics:
+1. Header, Sidebar Component, HomeComponent (Dynamic display of menu) (structure of the project)
+2. All Submenu have specific format in which they have to be written.
+3. Router Navigation: the list topics are first made turned into camelcase and then freed from whitespaces. The resulting word is used for routing. 
+    So, routing too have a very specific format. For eg, for "Track Employee" in the navbar menu, its route is .../trackEmployee, for "View Employees", 
+    it's .../viewEmployee. Is this a bad practice? 
+    //Implemnted a new method which fetches the navigation address from the menu clicked. 
+4. Router Navigation changed ... see both the approaches in the 
+
+    // Features Implemented:
+    1. Date Input in the miscComponent
+    2. Passing Grade limited to A-F in miscComponent
+
+
+//Features and Functions
+1. All the details - personal, family, educational... submitted by the manager has to be verified by the Admin before the final submission. 
+2. Tabbed details of the employee when clicked in the list of viewEmployee.
+3. In case of wrong email/password, there should be some kind of notification. 
+4. Validation of Passing Grade and other datas for storing in the db.
+5. Presetting of the datas of the employee.
+
+//Ideas
+1. Replace all the submenus and place it in a single place in AppService. Find the possiblities of centralizing all the navbar headers. 
+
+//Things to Remember
+1. "trainingDetails" is made an object. Proper care should be taken to write it in the database.
+2. "CreateReport" component is shared by all the modules as anyone can create a report.
+
+
+#############################################################################################################
+FIELDS AND DATA GENERATED IN THE UI-App
+1. NomineeDetailsComponent:
+    'nomineeName'
+    'relation'
+    'contactNum'
+
+2. MiscDetailsComponent
+    "domainName"
+    "salary"
+    "languages"
+    "trainingDetails"
+        'trainingName'
+        'completionDate'
+        'passingGrade'
+
+3.
+#############################################################################################################
