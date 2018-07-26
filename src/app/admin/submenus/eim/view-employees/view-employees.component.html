@@ -1,3 +1,23 @@
-<p>
-  view-employees works!
-</p>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="list-group" *ngFor="let employee of employees">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm-3">{{"Emp Code: "+employee.employeeCode}}</div>
+            <div class="col-sm-4">{{employee.firstname+" "+employee.lastname}}</div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-default rounded-0" [routerLink]="['../editEmployee']" [queryParams]="{id: employee.employeeCode}">View/Update</button>
+            </div>
+            <div class="col-sm-2">
+              <!-- <button type="button" class="btn btn-danger rounded-0" (click)="deleteEmployee(employee.employeeCode)">Delete</button> -->
+              <button class="btn btn-danger rounded-0" (click)="openConfirmationDialog()">Delete</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

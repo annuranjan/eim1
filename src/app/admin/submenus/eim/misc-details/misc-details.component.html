@@ -1,88 +1,77 @@
 <div class="bottomMargin2"></div>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
+  <div class="col-sm-12">
 
-      <form [formGroup]="miscForm" (ngSubmit)="onFormSubmit()">
-        <div class="form-group">
+    <form [formGroup]="miscForm" (ngSubmit)="onFormSubmit()">
+
+      <div class="form-group">
+        <div class="row">
+          <label for="salary" class="col-sm-2">Salary</label>
+          <input type="number" class="form-control col-sm-2" name="salary" id="salary" formControlName="salary">
+          <span *ngIf="miscForm.get('salary').invalid && miscForm.get('salary').touched"></span>
+        </div>
+      </div>
+
+      <hr>
+
+      <div formArrayName="languages">
+        <button class="btn btn-default rounded-0 bottomMargin2" (click)="addALanguage()">Add a language</button>&nbsp;
+
+        <div class="form-group" *ngFor="let language of miscForm.get('languages').controls; let i=index">
           <div class="row">
-            <label for="domainName" class="col-sm-2">Domain Name</label>
-            <input type="text" class="form-control col-sm-4" name="domainName" id="domainName" formControlName="domainName">
-            <span *ngIf="miscForm.get('domainName').invalid && miscForm.get('domainName').touched">Please enter the domain name!</span>
+            <label class="col-sm-2" for="languages">Language {{i+1}}</label>
+            <input type="text" class="form-control col-sm-4" [formControlName]="i">&nbsp;
+            <button class="btn btn-danger rounded-0" (click)="onDeleteLanguage(i)">Delete</button>
           </div>
+          <span *ngIf="language.invalid && language.touched" [ngStyle]="{'color': 'red'}">Please enter a language!</span>
         </div>
+      </div>
 
-        <hr>
+      <hr>
 
-        <div class="form-group">
-          <div class="row">
-            <label for="salary" class="col-sm-2">Salary</label>
-            <input type="number" class="form-control col-sm-2" name="salary" id="salary" formControlName="salary">
-            <span *ngIf="miscForm.get('salary').invalid && miscForm.get('salary').touched"></span>
-          </div>
-        </div>
+      <div formArrayName="trainingDetails">
+        <button class="btn btn-default rounded-0 bottomMargin2" type="button" (click)="addATraining()">Add training details</button>
 
-        <hr>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Training Name</th>
+              <th scope="col">Date of Completion</th>
+              <th scope="col">Passing Grade</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
 
-        <div formArrayName="languages">
-          <button class="defaultButton bottomMargin2" (click)="addALanguage()">Add a language</button>&nbsp;
+          <tbody *ngFor="let formGroup of miscForm.get('trainingDetails').controls; let i = index">
 
-          <div class="form-group" *ngFor="let language of miscForm.get('languages').controls; let i=index">
-            <div class="row">
-              <label class="col-sm-2" for="languages">Language {{i+1}}</label>
-              <input type="text" class="form-control col-sm-4" [formControlName]="i">&nbsp;
-              <button class="deleteButton" (click)="onDeleteLanguage(i)">Delete</button>
-            </div>
-            <span *ngIf="language.invalid && language.touched" [ngStyle]="{'color': 'red'}">Please enter a language!</span>
-          </div>
-        </div>
+            <tr [formGroupName]="i">
+              <td>{{i+1}}</td>
+              <td>
+                <input type="text" formControlName="trainingName" placeholder="Training Name">
+              </td>
+              <td>
+                <p-calendar formControlName="completionDate"></p-calendar>
+              </td>
+              <td>
+                <input type="text" formControlName="passingGrade" placeholder="Passing Grade" #grade (input)="grade.value=$event.target.value.toUpperCase()"
+                  pattern="[a-fA-F]*" maxlength="1">
 
-        <hr>
+                <!-- [pattern]="'^[a-fA-f]*'" -->
+                <!-- ng-pattern="/^[a-fA-F]*$/" -->
+                <!-- [pattern]="'^[a-fA-F]$'" -->
+              </td>
+              <td>
+                <button class="btn btn-danger rounded-0" (click)="deleteATraining(i)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr>
 
-        <div formArrayName="trainingDetails">
-          <button class="defaultButton bottomMargin2" type="button" (click)="addATraining()">Add training details</button>
+      <button class="btn btn-primary rounded-0" type="submit">Submit</button>
+    </form>
 
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Training Name</th>
-                <th scope="col">Date of Completion</th>
-                <th scope="col">Passing Grade</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-
-            <tbody *ngFor="let formGroup of miscForm.get('trainingDetails').controls; let i = index">
-
-              <tr [formGroupName]="i">
-                <td>{{i+1}}</td>
-                <td>
-                  <input type="text" formControlName="trainingName" placeholder="Training Name">
-                </td>
-                <td>
-                  <p-calendar formControlName="completionDate"></p-calendar>
-                </td>
-                <td>
-                  <input type="text" formControlName="passingGrade" placeholder="Passing Grade" #grade (input)="grade.value=$event.target.value.toUpperCase()"
-                    pattern="[a-fA-F]*" maxlength="1">
-
-                  <!-- [pattern]="'^[a-fA-f]*'" -->
-                  <!-- ng-pattern="/^[a-fA-F]*$/" -->
-                  <!-- [pattern]="'^[a-fA-F]$'" -->
-                </td>
-                <td>
-                  <button class="deleteButton" (click)="deleteATraining(i)">Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <hr>
-
-        <button class="submitButton" type="submit">Submit</button>
-      </form>
-
-    </div>
   </div>
 </div>

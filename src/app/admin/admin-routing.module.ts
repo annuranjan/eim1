@@ -14,6 +14,7 @@ import { NomineeDetailsComponent } from "./submenus/eim/nominee-details/nominee-
 import { FamEduExpComponent } from "./submenus/eim/fam-edu-exp/fam-edu-exp.component";
 import { CreateReportComponent } from "../core/shared-module/create-report/create-report.component";
 import { PersonalDetailsComponent } from "./submenus/eim/personal-details/personal-details.component";
+import { EditEmployeeComponent } from "./submenus/eim/edit-employee/edit-employee.component";
 
 const adminRoutes: Routes = [
     {
@@ -23,7 +24,7 @@ const adminRoutes: Routes = [
                 path: "eim", component: EimComponent, children: [
                     { path: "addEmployee", component: AddEmployeeComponent },
                     { path: "viewEmployees", component: ViewEmployeesComponent },
-                    { path: "editEmployee", component: AddEmployeeComponent },
+                    { path: "editEmployee", component: EditEmployeeComponent },
                     { path: "personalDetails", component: PersonalDetailsComponent },
                     { path: "languages", component: MiscDetailsComponent },
                     { path: "trainingDetails", component: MiscDetailsComponent },

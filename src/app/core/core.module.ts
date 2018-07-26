@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material';
 
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -15,8 +16,10 @@ import { AdminModule } from '../admin/admin.module';
 import { SharedModule } from './shared-module/shared.module';
 import { EmployeeModule } from '../employee/employee.module';
 import { ManagerModule } from '../manager/manager.module';
-import { ErrorHandlerService } from './errorHandler.service';
-import { AuthLogService } from './authLog.service';
+import { RemoteRequestService } from './remoteRequest.service';
+import { RemoteRequestBuilderService } from './remoteRequestBuilder.service';
+import { UtilModule } from './util/util.module';
+
 
 @NgModule({
   imports: [
@@ -31,13 +34,20 @@ import { AuthLogService } from './authLog.service';
     AdminModule,
     EmployeeModule,
     ManagerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    UtilModule,
+    MatDialogModule
   ],
   declarations: [
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   exports: [],
-  providers: [AuthService, AppService, ErrorHandlerService, AuthLogService]
+  providers: [
+    AuthService,
+    AppService,
+    RemoteRequestService,
+    RemoteRequestBuilderService
+  ]
 })
 export class CoreModule { }

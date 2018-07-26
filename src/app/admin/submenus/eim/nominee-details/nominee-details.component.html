@@ -2,7 +2,7 @@
 <br>
 <div class="container">
   <form [formGroup]="nomForm" (ngSubmit)="onFormSubmit()">
-    <button type="button" class="defaultButton bottomMargin2" (click)="addANominee()">Add a nominee</button>
+    <button type="button" class="btn btn-default rounded-0 bottomMargin2" (click)="addANominee()">Add a nominee</button>
 
     <hr>
     <b>
@@ -23,7 +23,7 @@
             <input type="text" class="form-control col-sm-4" name="nomineeName" formControlName="nomineeName">&nbsp;
             <input type="text" class="form-control col-sm-2" formControlName="relation">&nbsp;
             <input type="number" class="form-control col-sm-2" formControlName="contactNum">&nbsp;
-            <button type="button" class="deleteButton" (click)="deleteANominee(i)">Delete</button>
+            <button type="button" class="btn btn-danger rounded-0" (click)="deleteANominee(i)">Delete</button>
           </div>
           <span style="color:red" *ngIf="nominee.get('nomineeName').invalid && nominee.get('nomineeName').touched">
             Please enter a nominee name!
@@ -35,6 +35,6 @@
     </div>
     <hr>
     <br>
-    <button class="submitButton">Submit</button>
+    <button class="btn btn-primary rounded-0">Submit</button>
   </form>
 </div>

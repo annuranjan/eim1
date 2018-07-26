@@ -29,11 +29,12 @@ export class HeaderComponent implements OnInit {
   }
 
   onHomeClick() {
-    const url = this.userType + 'Home';
+    const url = this.userType;
     this.router.navigate([url]);
   }
 
   onNavClick(menuItem: string) {
+    // debugger;
     this.appServ.sendNavMenuSub(menuItem);
     // const url = '/' + this.authServ.getUserType() + '/' + menuItem.replace(/\s+/g, '').toLowerCase();
 
@@ -42,7 +43,7 @@ export class HeaderComponent implements OnInit {
     const urlMaker = this.userType + "Routes";
     const url = this.navMenus[urlMaker][menuItem];
     console.log(url);
-    this.router.navigate([url], { relativeTo: this.route });
+    // this.router.navigate([url], { relativeTo: this.route });
   }
 
   onLogout() {

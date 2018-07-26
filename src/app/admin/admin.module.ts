@@ -20,6 +20,9 @@ import { MiscDetailsComponent } from './submenus/eim/misc-details/misc-details.c
 import { NomineeDetailsComponent } from './submenus/eim/nominee-details/nominee-details.component';
 import { FamEduExpComponent } from './submenus/eim/fam-edu-exp/fam-edu-exp.component';
 import { PersonalDetailsComponent } from './submenus/eim/personal-details/personal-details.component';
+import { EditEmployeeComponent } from './submenus/eim/edit-employee/edit-employee.component';
+import { MatDialogModule } from '../../../node_modules/@angular/material';
+import { UtilModule } from '../core/util/util.module';
 
 @NgModule({
   imports: [
@@ -29,8 +32,11 @@ import { PersonalDetailsComponent } from './submenus/eim/personal-details/person
     AdminRoutingModule,
     ReactiveFormsModule,
     CalendarModule,
-    DropdownModule
+    DropdownModule,
+    MatDialogModule,
+    UtilModule
   ],
+
   declarations: [
     AdminComponent,
     EimComponent,
@@ -43,7 +49,8 @@ import { PersonalDetailsComponent } from './submenus/eim/personal-details/person
     MiscDetailsComponent,
     NomineeDetailsComponent,
     FamEduExpComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+    EditEmployeeComponent
   ]
 })
 export class AdminModule { }

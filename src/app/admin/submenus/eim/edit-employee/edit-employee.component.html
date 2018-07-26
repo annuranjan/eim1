@@ -1,0 +1,62 @@
+<!-- // domainname:"sdfag" // email:"sdfasd@sf" // employeeCode:3 // firstname:"dfsdf" // lastname:"sdffsds" // middlename:""
+// regDate:"25/6/2018 16:16:1" -->
+<div *ngIf="employee">
+  <div class="container">
+    <div class="col-sm-8 col-xm-offset-2" *ngIf="!submittedSuccessfully">
+      <br>
+      <br>
+      <form [formGroup]="viewEditEmpForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="employeeCode">Employee Code:</label>
+          <input type="text" formControlName="employeeCode" class="form-control col-sm-8" name="employeeCode" id="employeeCode" readonly>
+          <span *ngIf="viewEditEmpForm.get('employeeCode').invalid && viewEditEmpForm.get('employeeCode').touched" [ngStyle]="{'color':'red'}">Please enter a employeeCode!</span>
+        </div>
+
+        <div class="form-group">
+          <label for="firstname">First Name:</label>
+          <input type="text" formControlName="firstname" class="form-control col-sm-8" name="firstname" id="firstname">
+          <span *ngIf="viewEditEmpForm.get('firstname').invalid && viewEditEmpForm.get('firstname').touched" [ngStyle]="{'color':'red'}">Please enter a name!</span>
+        </div>
+        <div class="form-group">
+          <label for="middlename">Middle Name:</label>
+          <input type="text" formControlName="middlename" class="form-control col-sm-8" name="middlename" id="middlename">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" formControlName="lastname" class="form-control col-sm-8" name="lastname" id="lastname">
+          <span *ngIf="viewEditEmpForm.get('lastname').invalid && viewEditEmpForm.get('lastname').touched" [ngStyle]="{'color':'red'}">Please enter a last name!</span>
+
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" formControlName="email" class="form-control col-sm-8" name="email" id="email">
+          <span *ngIf="viewEditEmpForm.get('email').invalid && viewEditEmpForm.get('email').touched" [ngStyle]="{'color':'red'}">Please enter a valid email!</span>
+
+        </div>
+        <div class="form-group">
+          <label for="domainname">Doamin name:</label>
+          <input type="text" formControlName="domainname" class="form-control col-sm-8" name="domainname" id="domainname">
+          <span *ngIf="viewEditEmpForm.get('domainname').invalid && viewEditEmpForm.get('domainname').touched" [ngStyle]="{'color':'red'}">Please enter a domain name!</span>
+        </div>
+
+        <div class="form-group">
+          <label for="regDate">Employee Registration Date:</label>
+          <input type="text" formControlName="regDate" class="form-control col-sm-8" name="regDate" id="regDate" readonly>
+          <span *ngIf="viewEditEmpForm.get('regDate').invalid && viewEditEmpForm.get('regDate').touched" [ngStyle]="{'color':'red'}">Please enter a domain name!</span>
+        </div>
+
+
+        <button class="btn btn-primary rounded-0" type="submit" [disabled]="viewEditEmpForm.invalid">Submit</button>
+      </form>
+    </div>
+    <div *ngIf="submittedSuccessfully">
+      <br>
+      <br>
+      <p>Employee successfully updated!</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!employee">Please select an employee from employee view list!</div>
+
+<!-- <p>Under Construction!</p> -->

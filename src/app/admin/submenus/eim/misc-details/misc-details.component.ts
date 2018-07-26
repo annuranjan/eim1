@@ -14,7 +14,6 @@ export class MiscDetailsComponent implements OnInit {
   ngOnInit() {
     //Initialize the grid with the values already fed by the user.
     this.miscForm = new FormGroup({
-      "domainName": new FormControl(null, /*validator based on whether the user already */),
       "salary": new FormControl(),
       "languages": new FormArray(
         [new FormControl(null, Validators.required)]

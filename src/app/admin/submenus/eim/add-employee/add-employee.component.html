@@ -1,33 +1,40 @@
-<div class="container">
-  <div class="col-sm-8 col-xm-offset-2">
+<div class="container-fluid">
+  <div class="col-sm-8 col-xm-offset-2" *ngIf="!submittedSuccessfully">
+    <!-- <br>
+    <br> -->
     <form [formGroup]="addEmpForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input type="text" formControlName="firstName" class="form-control col-sm-8" name="firstName" id="firstName">
-        <span *ngIf="addEmpForm.get('firstName').invalid && addEmpForm.get('firstName').touched">Please enter a name!</span>
+        <label for="firstname">First Name:</label>
+        <input type="text" formControlName="firstname" class="form-control col-sm-8" name="firstname" id="firstname">
+        <span *ngIf="addEmpForm.get('firstname').invalid && addEmpForm.get('firstname').touched" [ngStyle]="{'color':'red'}">Please enter a name!</span>
       </div>
       <div class="form-group">
-        <label for="middleName">Middle Name:</label>
-        <input type="text" formControlName="middleName" class="form-control col-sm-8" name="middleName" id="middleName">
+        <label for="middlename">Middle Name:</label>
+        <input type="text" formControlName="middlename" class="form-control col-sm-8" name="middlename" id="middlename">
       </div>
       <div class="form-group">
         <label for="lastName">Last Name:</label>
-        <input type="text" formControlName="lastName" class="form-control col-sm-8" name="lastName" id="lastName">
-        <span *ngIf="addEmpForm.get('lastName').invalid && addEmpForm.get('lastName').touched">Please enter a last name!</span>
+        <input type="text" formControlName="lastname" class="form-control col-sm-8" name="lastname" id="lastname">
+        <span *ngIf="addEmpForm.get('lastname').invalid && addEmpForm.get('lastname').touched" [ngStyle]="{'color':'red'}">Please enter a last name!</span>
 
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" formControlName="email" class="form-control col-sm-8" name="email" id="email">
-        <span *ngIf="addEmpForm.get('email').invalid && addEmpForm.get('email').touched">Please enter a valid email!</span>
+        <span *ngIf="addEmpForm.get('email').invalid && addEmpForm.get('email').touched" [ngStyle]="{'color':'red'}">Please enter a valid email!</span>
 
       </div>
       <div class="form-group">
-        <label for="domainName">Doamin name:</label>
-        <input type="text" formControlName="domainName" class="form-control col-sm-8" name="domainName" id="domainName">
-        <span *ngIf="addEmpForm.get('domainName').invalid && addEmpForm.get('domainName').touched">Please enter a domain name!</span>
+        <label for="domainname">Doamin name:</label>
+        <input type="text" formControlName="domainname" class="form-control col-sm-8" name="domainname" id="domainname">
+        <span *ngIf="addEmpForm.get('domainname').invalid && addEmpForm.get('domainname').touched" [ngStyle]="{'color':'red'}">Please enter a domain name!</span>
       </div>
-      <button class="submitButton" type="submit">Submit</button>
+      <button class="btn btn-primary rounded-0" type="submit" [disabled]="addEmpForm.invalid">Submit</button>
     </form>
+  </div>
+  <div *ngIf="submittedSuccessfully">
+    <br>
+    <br>
+    <p>New employee successfully added!</p>
   </div>
 </div>

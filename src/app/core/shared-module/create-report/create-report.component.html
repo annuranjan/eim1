@@ -34,6 +34,6 @@
   </div>
 
   <div class="row" *ngIf="reportForm.invalid && reportForm.touched" [ngStyle]="{'color':'red'}">Please fill all the fields of the report!</div>
-  <button [disabled]="reportForm.invalid" class="submitButton">Submit</button>
+  <button [disabled]="reportForm.invalid" class="btn btn-primary rounded-0">Submit</button>
 
 </form>
