@@ -13,9 +13,6 @@ import { ConfirmationDialogComponent } from './core/util/confirmation-dialog/con
     CoreModule,
     RouterModule
   ],
-  entryComponents: [
-    ConfirmationDialogComponent
-  ],
   providers: [],
   bootstrap: [AppComponent]
 })

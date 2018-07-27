@@ -2,7 +2,7 @@
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-10">
       <ul class="list-group" *ngFor="let employee of employees">
         <li class="list-group-item">
           <div class="row">
@@ -13,7 +13,7 @@
             </div>
             <div class="col-sm-2">
               <!-- <button type="button" class="btn btn-danger rounded-0" (click)="deleteEmployee(employee.employeeCode)">Delete</button> -->
-              <button class="btn btn-danger rounded-0" (click)="openConfirmationDialog()">Delete</button>
+              <button class="btn btn-danger rounded-0" (click)="openConfirmationDialog(employee.employeeCode, employee.firstname)">Delete</button>
             </div>
           </div>
         </li>

@@ -19,6 +19,7 @@ import { ManagerModule } from '../manager/manager.module';
 import { RemoteRequestService } from './remoteRequest.service';
 import { RemoteRequestBuilderService } from './remoteRequestBuilder.service';
 import { UtilModule } from './util/util.module';
+import { ConfirmationDialogComponent } from './util/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { UtilModule } from './util/util.module';
     AppService,
     RemoteRequestService,
     RemoteRequestBuilderService
-  ]
+  ],
+  entryComponents: [ConfirmationDialogComponent]
 })
 export class CoreModule { }

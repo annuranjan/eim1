@@ -11,6 +11,17 @@ export class PersonalDetailsComponent implements OnInit {
   pdForm: FormGroup;
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    
+  }
 
 }
+
+// pd_employeeCode: 
+// pd_dob: 
+// pd_gender:
+// pd_nationality: 
+// pd_bloodgroup: {
+// pd_maritalStatus: 
+// pd_category: 
+// pd_religion: 

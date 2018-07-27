@@ -40,33 +40,6 @@ export class EditEmployeeComponent implements OnInit {
       console.log(this.id);
     });
 
-    // domainname:"sdfag"
-    // email:"sdfasd@sf"
-    // employeeCode:3
-    // firstname:"dfsdf"
-    // lastname:"sdffsds"
-    // middlename:""
-    // regDate:"25/6/2018 16:16:1"
-
-    // const url = "http://localhost:1122/employees/" + this.id;
-    // this.http.get(url).subscribe(
-    //   (emp) => {
-    //     this.employee = emp;
-    //     console.log("Employee fetched is: ");
-    //     console.log(this.employee);
-
-
-    //     this.viewEditEmpForm.setValue({
-    //       "employeeCode": this.employee.employeeCode,
-    //       'firstname': this.employee.firstname,
-    //       'middlename': this.employee.middlename,
-    //       'lastname': this.employee.lastname,
-    //       'email': this.employee.email,
-    //       'domainname': this.employee.domainname,
-    //       'regDate': this.employee.regDate,
-    //     });
-    //   })
-
     this.reqBuilder.fetchAnEmp(this.id).subscribe(
       (emp) => {
         this.employee = emp;
@@ -87,7 +60,6 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   onSubmit() {
-    // this.http.put()
     const updatedEmployee = {
       // _id: this.employee._id,
       // employeeCode: this.viewEditEmpForm.value.employeeCode,
@@ -98,11 +70,6 @@ export class EditEmployeeComponent implements OnInit {
       email: this.viewEditEmpForm.value.email,
       // regDate: this.viewEditEmpForm.value.regDate,
     }
-
-    // const url = "http://localhost:1122/employees/" + this.employee.employeeCode;
-    // this.http.put(url, updatedEmployee).subscribe(() => {
-    //   this.submittedSuccessfully = true;
-    // });
 
     this.reqBuilder.updateAnEmp(this.employee.employeeCode, updatedEmployee).subscribe(() => {
       this.submittedSuccessfully = true;
