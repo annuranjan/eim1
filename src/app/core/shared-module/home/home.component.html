@@ -1,9 +1,14 @@
 <app-header></app-header>
-<div *ngIf="sideBarVisibility">
+<!-- <div *ngIf="sideBarVisibility">
   <router-outlet></router-outlet>
-  <!-- <app-eim [parvez]="dispSideBar"></app-eim> -->
 </div>
 <div *ngIf="!sideBarVisibility">
   Welcome {{userType}}
+</div> -->
+
+<div [hidden]="hideSidebar()">
+  <router-outlet></router-outlet>
 </div>
-<!-- <router-outlet></router-outlet> -->
+<div [hidden]="hideSidebar()">
+  Welcome {{userType}}
+</div>

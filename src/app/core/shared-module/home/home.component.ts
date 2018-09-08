@@ -52,4 +52,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.menuRequestSubs.unsubscribe();
   }
+  hideSidebar() {
+    if (!this.sideBarVisibility)
+      return true;
+    else
+      return false;
+
+  }
 }

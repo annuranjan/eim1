@@ -25,7 +25,6 @@ import { ConfirmationDialogComponent } from './util/confirmation-dialog/confirma
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -35,9 +34,9 @@ import { ConfirmationDialogComponent } from './util/confirmation-dialog/confirma
     AdminModule,
     EmployeeModule,
     ManagerModule,
-    BrowserAnimationsModule,
     UtilModule,
-    MatDialogModule
+    BrowserAnimationsModule,
+    BrowserModule,MatDialogModule
   ],
   declarations: [
     LoginComponent,

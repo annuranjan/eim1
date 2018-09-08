@@ -19,6 +19,7 @@ import { EditEmployeeComponent } from "./submenus/eim/edit-employee/edit-employe
 const adminRoutes: Routes = [
     {
         path: "admin", component: AdminComponent, children: [
+            { path: "", redirectTo: "admin-admin", pathMatch: "full" },
             { path: "admin-admin", component: EimComponent },
             {
                 path: "eim", component: EimComponent, children: [
